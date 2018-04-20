@@ -1,0 +1,60 @@
+\documentclass[11pt, a4paper]{article}
+
+% Packages
+\input{pages/system-packages.tex}
+\input{pages/user-packages.tex}
+
+% Variables
+\input{pages/00-datos-alumno.tex}
+
+\begin{document}
+
+\thispagestyle{empty}
+
+\input{pages/01-etiqueta.tex}
+
+\newpage\null\thispagestyle{empty}\newpage
+\newpage\null\thispagestyle{empty}\newpage
+
+\thispagestyle{empty}
+\input{pages/02-datos-tfg.tex}
+
+\newpage\null\thispagestyle{empty}\newpage
+
+\ifdef{\addack}{
+  \pagenumbering{roman}
+  \setcounter{page}{1}
+  \input{pages/03-agradecimientos.tex}
+
+  \newpage\null\thispagestyle{empty}\newpage
+
+  \setcounter{page}{2}
+  \input{pages/04-resumen.tex}
+
+  \newpage\null\thispagestyle{empty}\newpage
+
+  \setcounter{page}{3}
+  \renewcommand{\contentsname}{Índice}
+}{
+  \pagenumbering{roman}
+  \setcounter{page}{1}
+  \input{pages/04-resumen.tex}
+
+  \newpage\null\thispagestyle{empty}\newpage
+
+  \setcounter{page}{2}
+  \renewcommand{\contentsname}{Índice}
+}
+\tableofcontents
+
+\newpage\null\thispagestyle{empty}\newpage
+
+\ifdef{\configpar}{
+  \setlength{\parindent}{10px}
+}{}
+
+\pagenumbering{arabic}
+\setcounter{page}{1}
+\input{pages/05-cuerpo.tex}
+
+\end{document}

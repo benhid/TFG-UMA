@@ -1,0 +1,65 @@
+\section{Introducción}
+
+\subsection{Motivación}
+
+Cita de artículo \cite{greenwade93}
+
+Código de ejemplo:
+\begin{lstlisting}[language=Python]
+def main():
+  print("Cita de articulo \cite{greenwade93}")
+\end{lstlisting}
+
+O, alternativamente, para escribir {\it pseudo}-código:
+\begin{algorithm}[H]
+  \caption{Ejemplo}\label{euclid}
+  \begin{algorithmic}[1]
+    \Procedure{Euclid}{$a,b$} \Comment{The g.c.d. of a and b}
+        \State $r\gets a \bmod b$
+        \While{$r\not=0$} \Comment{We have the answer if r is 0}
+            \State $a \gets b$
+            \State $b \gets r$
+            \State $r \gets a \bmod b$
+        \EndWhile\label{euclidendwhile}
+        \State \textbf{return} $b$\Comment{The gcd is b}
+    \EndProcedure
+  \end{algorithmic}
+\end{algorithm}
+
+\tikzstyle{box} = [draw, rectangle, minimum height=3em, minimum width=3em]
+\tikzstyle{cir} = [draw, circle, line width=0.5pt]
+\tikzstyle{container} = [draw, rectangle, dashed, inner sep=1em]
+\begin{figure*}[h]
+  \centering
+  \begin{tikzpicture}[auto, node distance=5cm]
+      % Place nodes
+      \node [box, fill={rgb:red,1;green,2;blue,5}] (node1) {Foo};
+      \node [container, fit=(node1), label=north:{main}] (node1container) {};
+      \node [cir, right=of node1] (node2) {Bar};
+      % Connect nodes
+      \draw [->, rounded corners=0.2cm] (node1) -- node {link} (node2);
+  \end{tikzpicture}
+  \caption{Diagrama de ejemplo.}
+\end{figure*}
+
+\subsection{Estado del arte}
+
+\cleardoublepage
+
+\section{Diseño}
+\subsection{Implementación}
+
+\cleardoublepage
+
+\section{Resultados}
+\subsection{Conclusiones}
+\subsection{Futuras líneas de trabajo}
+
+\cleardoublepage
+
+\section{Bibliografía}
+\printbibliography[heading=none]
+
+\cleardoublepage
+
+\section{Anexos}

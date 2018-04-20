@@ -1,0 +1,25 @@
+% Basic packages
+\usepackage[margin=2.5cm]{geometry}
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+
+% Don't indent paragraphs.
+\usepackage{parskip}
+\setlength\parindent{0em}
+
+% Bibliography
+\usepackage[american, spanish]{babel}
+\usepackage[autostyle]{csquotes}
+\usepackage[bibstyle=science, 
+			citestyle=authoryear, 
+            sorting=none, 
+            autopunct=false,
+            uniquename=init, 
+            maxbibnames=4, 
+            article-title=true]{biblatex}
+\addbibresource{references.bib}
+
+% Color bibliography
+\usepackage[svgnames]{xcolor} 
+\definecolor{bleu_cite}{RGB}{12,127,172}
+\AtEveryCite{\color{NavyBlue}}
