@@ -1,0 +1,65 @@
+% Core
+\usepackage[margin=2.5cm]{geometry}
+\usepackage[utf8]{inputenc}
+\usepackage[american, spanish, es-tabla]{babel}
+\usepackage{hyperref}
+\usepackage{bookmark}
+\usepackage{emptypage}
+
+% Graphics
+\usepackage{pdfpages}
+\usepackage{graphicx}
+\usepackage{epsfig}
+
+% Bibliography
+\usepackage[autostyle]{csquotes}
+\usepackage[bibstyle=science, 
+			citestyle=authoryear, 
+            sorting=none, 
+            autopunct=false,
+            uniquename=init, 
+            maxbibnames=4,
+            articletitle=true]{biblatex}
+\addbibresource{references.bib}
+\AtEveryCite{\color{blue}}
+\DefineBibliographyStrings{spanish}{
+  presentedat = {presentado en~}
+}
+
+% Fancy header and footer
+\usepackage{fancyvrb}
+\usepackage{fancyhdr}
+
+\fancypagestyle{onlyfooter}
+{
+    \renewcommand{\headrulewidth}{0pt}
+    \fancyfoot[C]{\thepage}
+    \fancyhead{}
+}
+
+\pagestyle{fancy}
+\setlength{\headheight}{20pt}
+\fancyfoot[C]{\thepage}
+\fancyhead[LE,RO]{\leftmark}
+\fancyhead[RE,LO]{}
+
+% Appendix
+\usepackage[titletoc]{appendix}
+
+%%%%% Tweaks %%%%%
+% Small captions size
+\usepackage[font=small]{caption}
+
+% Don't indent paragraphs.
+\usepackage{parskip}
+\setlength\parindent{0em}
+
+% Reduce spacing before/after subsubsection
+\usepackage{titlesec}
+\titlespacing*{\subsection}{0pt}{2.25ex plus 1ex minus .2ex}{0.1ex plus .2ex minus .2ex}
+\titleformat{\chapter}[display]
+  {\bfseries\Large}
+  {\filright\MakeUppercase{\chaptertitlename} \Huge\thechapter}
+  {1ex}
+  {\titlerule\vspace{1ex}\filleft}
+  [\vspace{1ex}\titlerule]

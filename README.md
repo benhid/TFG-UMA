@@ -6,34 +6,19 @@
 
 # TFG-UMA
 
-Plantilla para la elaboración del Trabajo de Fin de Grado (TFG) de la Universidad de Málaga, antendiendo a las [normas de presentación, estructura y normas de edición](https://www.uma.es/etsi-informatica/info/72589/tfg-memoria-y-defensa/) establecidas en el reglamento de la E.T.S. de Ingeniería Informática (a fecha de **junio de 2018**).
+Plantilla para la elaboración del Trabajo de Fin de Grado (TFG) de la Universidad de Málaga, antendiendo a las [normas de presentación, estructura y normas de edición](https://www.uma.es/etsi-informatica/info/72589/tfg-memoria-y-defensa/) establecidas en el reglamento de la E.T.S. de Ingeniería Informática (a fecha de **junio de 2019**).
 
 > Puede ver un ejemplo de memoria generada en el fichero [main.pdf](main.pdf)
 
 ## Estructura del proyecto
 
-El método más sencillo para editar esta plantilla es creando un nuevo proyecto en [Overleaf](https://www.overleaf.com) e importar todo el contenido de este repositorio.
+El método más sencillo para usar esta plantilla es crear un nuevo proyecto en [Overleaf](https://www.overleaf.com) e importar todo el contenido de este repositorio en formato ZIP.
 
-En su interior podemos encontrar dos carpetas:
-- `pages` (para almacenar las páginas del TFG) e
-- `images` (para almacenar las figuras que usemos y que contiene el logo de la universidad).
+El alumno solo debe modificar el fichero `datos.tex` e introducir la información que se solicita. A continuación, podrá completar la memoria modificando los ficheros que se encuentran en la carpeta [pages](pages).
 
-Y un fichero:
-- `main.tex` (encargado de componer todas las páginas e introducir las páginas en blanco, entre otras cosas).
+> La primera página del documento se corresponde con la *etiqueta*, que **NO** debe incluirse en la memoria. Irá pegada sobre la cubierta facilitada por el centro.
 
-Nos centraremos en el contenido de la carpeta `pages`. En ella, podemos encontrar los siguientes archivos:
-- `00-datos-alumno.tex`*, que contiene el nombre del alumno, el nombre del tutor, título en español e inglés, etcétera (a modificar por el alumno),
-- `01-etiqueta.tex`, que contiene la primera página de la memoria (generada automáticamente),
-- `02-datos-tfg.tex`, que contiene la página de datos del TFG (generada automáticamente),
-- `03-agradecimientos.tex`*, que contiene la página *agradecimientos* (a modificar por el alumno),
-- `04-resumen.tex`*, que contiene la página *resumen* (a modificar por el alumno) y
-- `05-cuerpo.tex`*, que contiene el *cuerpo* de la memoria (a modificar por el alumno).
-
-Además de dos ficheros auxiliares:
-- `system-packages.tex`, que contiene las librerías necesarias para el correcto funcionamiento de la plantilla, y
-- `user-packages.tex`*, que contendrá todas aquellas librerías extra (a modificar por el alumno).
-
-Todos aquellos ficheros marcados con un asterisco (*)  son susceptibles de ser modificados.
+> La plantilla fuerza que las páginas de agradecimientos, el resumen, los capítulos del cuerpo y los anexos empiecen en páginas impares siguiendo el formato de un libro.
 
 ## Bibliografía
 

@@ -1,11 +1,11 @@
-\documentclass[11pt, a4paper]{article}
+\documentclass[12pt, a4paper]{book}
 
-% Packages
-\input{pages/system-packages.tex}
-\input{pages/user-packages.tex}
+% Core packages
+\input{packages/core.tex}
+\input{packages/extra.tex}
 
-% Variables
-\input{pages/00-datos-alumno.tex}
+% Load variables
+\input{datos.tex}
 
 \begin{document}
 
@@ -17,44 +17,73 @@
 \newpage\null\thispagestyle{empty}\newpage
 
 \thispagestyle{empty}
-\input{pages/02-datos-tfg.tex}
+\input{pages/02-portada.tex}
 
 \newpage\null\thispagestyle{empty}\newpage
 
-\ifdef{\addack}{
-  \pagenumbering{roman}
-  \setcounter{page}{1}
-  \input{pages/03-agradecimientos.tex}
-
-  \newpage\null\thispagestyle{empty}\newpage
-
-  \setcounter{page}{2}
-  \input{pages/04-resumen.tex}
-
-  \newpage\null\thispagestyle{empty}\newpage
-
-  \setcounter{page}{3}
-  \renewcommand{\contentsname}{Índice}
+\ifdef{\addacknowledgments}{
+    \pagenumbering{roman}
+    \thispagestyle{onlyfooter}
+    \setcounter{page}{1}
+    \input{pages/03-agradecimientos.tex}
+    
+    \newpage\null\thispagestyle{empty}\newpage
+    
+    \thispagestyle{onlyfooter}
+    \setcounter{page}{2}
+    \input{pages/04-resumen.tex}
+    
+    \newpage\null\thispagestyle{empty}\newpage
+    
+    \setcounter{page}{3}
+    \pagenumbering{arabic}
+    \renewcommand{\contentsname}{Índice de contenidos}
 }{
-  \pagenumbering{roman}
-  \setcounter{page}{1}
-  \input{pages/04-resumen.tex}
-
-  \newpage\null\thispagestyle{empty}\newpage
-
-  \setcounter{page}{2}
-  \renewcommand{\contentsname}{Índice}
+    \thispagestyle{empty}
+    \input{pages/04-resumen.tex}
+    
+    \newpage\null\thispagestyle{empty}\newpage
+    
+    \setcounter{page}{2}
+    \pagenumbering{arabic}
+    \renewcommand{\contentsname}{Índice de contenidos}
 }
+
+\setcounter{tocdepth}{3}
 \tableofcontents
 
 \newpage\null\thispagestyle{empty}\newpage
+\cleardoublepage
 
 \ifdef{\configpar}{
-  \setlength{\parindent}{10px}
+    \setlength{\parindent}{10px}
 }{}
 
-\pagenumbering{arabic}
 \setcounter{page}{1}
 \input{pages/05-cuerpo.tex}
+
+\cleardoublepage
+
+\addcontentsline{toc}{chapter}{Bibliografía}
+\label{chapter:references}
+\printbibliography
+
+\ifdef{\addappendix}{
+    \cleardoublepage
+    \thispagestyle{empty}
+    
+    \vspace*{\fill}
+    \begin{center}
+        {\huge Apéndices}
+    \end{center}
+    \vspace*{\fill}
+    
+    \appendix
+    
+    \begin{appendices}
+        \input{pages/06-anexos.tex}
+    \end{appendices}
+}{}
+
 
 \end{document}
